@@ -1,8 +1,11 @@
 % Handcrafted matrix multiplication function
 function C = matmult(A,B)
-    arguments
-        A(:,:) {validateattributes(A,{'numeric'},{'2d'})}
-        B(:,:) {validateattributes(B,{'numeric'},{'2d'})}
+    % Validate Inputs:
+    if ~(isnumeric(A) && isnumeric(B))
+        error("Inputs must be numeric");
+    end
+    if ~(ismatrix(A) && ismatrix(B))
+        error("Inputs must be 2D");
     end
     
     % Check size requirements:

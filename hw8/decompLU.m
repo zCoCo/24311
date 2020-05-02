@@ -1,7 +1,14 @@
 % Performs LU decomposition using Naive Gaussian Elminination.
 function [L,U] = decompLU(A)
-    arguments
-        A(:,:) {validateattributes(A,{'numeric'},{'square'})} % ensure input is a square matrix
+    % Ensure input is a square matrix:
+    if ~isnumeric(A)
+        error("Input must be numeric");
+    end
+    if ~ismatrix(A)
+        error("Input must be a 2D matrix");
+    end
+    if diff(size(A))
+        error("Input must be square");
     end
     
     % Make sure matrix is not singular or ill-conditioned (warn if so):

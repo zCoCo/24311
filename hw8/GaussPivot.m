@@ -10,7 +10,7 @@ function x = GaussPivot(A,b)
     % x = solution vector  
     [m,n]=size(A);  
     if m~=n, error('Matrix A must be square'); end
-    nb=n+1;  
+    nb=n+1;
     Aug=[A b];  
     % forward elimination  
     for k = 1:n-1  

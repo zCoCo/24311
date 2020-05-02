@@ -1,10 +1,6 @@
 % Uses LU decomposition and associated Gaussian Elminination techniques to
 % compute the inverse of the given square matrix A.
 function X = invLU(A)
-    arguments
-        A(:,:) {validateattributes(A,{'numeric'},{'square'})} % ensure input is a square matrix
-    end
-    
     % Make sure matrix is not singular or ill-conditioned (warn if so):
     invertibleMatrix(A);
     

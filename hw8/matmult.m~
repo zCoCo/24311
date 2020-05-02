@@ -4,6 +4,10 @@ function C = matmult(A,B)
         A(:,:) {validateattributes(A,{'numeric'},{'2d'})}
         B(:,:) {validateattributes(B,{'numeric'},{'2d'})}
     end
+    if ~isnumeric(A) || ~isnumeric(B)
+        error("Inputs must be numeric");
+    end
+    if
     
     % Check size requirements:
     [ma,na] = size(A);
